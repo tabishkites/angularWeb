@@ -1,0 +1,33 @@
+<button (click)="getLayout(1)">Grid</button>
+<button (click)="getLayout(2)">List</button>
+<select
+  style="margin-left: 40px"
+  (ngModelChange)="sortMethod($event)"
+  [(ngModel)]="sortItem"
+>
+  <option value="0" selected></option>
+  <option value="1">Price Low-High</option>
+  <option value="2">Price High - Low</option>
+  <option value="3">Views High-Low</option>
+  <option value="4">Views Low-High</option>
+</select>
+<div *ngFor="let divElement of data" style="margin-left: 150px">
+  <div class="layout" [ngClass]="layoutView">
+    <div class="row m-1 bg-success text-light">
+      Product : {{ divElement.Id }}
+    </div>
+    <div *ngIf="!isList">
+      <div class="row m-1 text-dark">
+        Price : {{ divElement.price | currency: "INR":"symbol-narrow":"3.2-2" }}
+      </div>
+      <div class="row m-1">Views : {{ divElement.views }}</div>
+    </div>
+  </div>
+  <div *ngIf="isList" style="height: 150px; padding-top: 40px">
+    <div class="row m-1">{{ divElement.Text }}</div>
+    <div class="row m-1">
+      Price : {{ divElement.price | currency: "INR":"symbol-narrow":"3.2-2" }}
+    </div>
+    <div class="row m-1">Views : {{ divElement.views }}</div>
+  </div>
+</div>

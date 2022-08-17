@@ -1,0 +1,20 @@
+<div class="panel panel-default">
+  <div class="panel-heading fontSize"></div>
+  <div class="panel-body fontSize">
+    <div *ngFor="let div of containers; let i = index">
+      <div class="row boxDiv">
+        <div class="col-5 text-danger">Div {{ i }}</div>
+        <div class="col-6" style="margin-top: 50px">
+          <button
+            type="submit"
+            class="bg-secondary"
+            style="width: 120px; height: 50px"
+            (click)="showDiv(i)"
+          >
+            Click
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

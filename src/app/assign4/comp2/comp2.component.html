@@ -1,0 +1,28 @@
+<div>
+  <label for="limit" class="left">Enter Timer Limit : </label>
+  <input type="text" [(ngModel)]="limit" name="limit" />
+</div>
+<div>
+  <button
+    class="btn btn-info m-2"
+    [disabled]="limit == 0"
+    (click)="startPauseCounter(1)"
+  >
+    Start
+  </button>
+  <button
+    class="btn btn-info m-2"
+    [disabled]="limit == 0"
+    (click)="startPauseCounter(2)"
+  >
+    Pause
+  </button>
+  <button
+    class="btn btn-info m-2"
+    [disabled]="limit == 0"
+    (click)="resetCounter()"
+  >
+    Reset
+  </button>
+  <span style="white-space: pre-wrap">{{ countPause }}</span>
+</div>

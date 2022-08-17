@@ -1,0 +1,160 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <form [formGroup]="checkoutForm" (ngSubmit)="postData()">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="firstname"
+            placeholder="Enter First Name"
+            formControlName="firstname"
+          />
+          <span
+            *ngIf="
+              dataControls.firstname.touched &&
+              dataControls.firstname.hasError('required')
+            "
+            >Pease Enter First Name</span
+          >
+          <span
+            *ngIf="
+              dataControls.firstname.touched &&
+              dataControls.firstname.hasError('minlength')
+            "
+            >Minimum length should be 5</span
+          >
+        </div>
+        <div class="form-group">
+          <label for="lastname">Last Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="lastname"
+            placeholder="Last Name"
+            formControlName="lastname"
+          />
+          <span
+            *ngIf="
+              dataControls.lastname.touched &&
+              dataControls.lastname.hasError('required')
+            "
+            >Pease Enter Last Name</span
+          >
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <select
+            class="form-control form-control-sm"
+            id="gender"
+            formControlName="gender"
+          >
+            <option value="1">Male</option>
+            <option value="2">Female</option>
+          </select>
+          <span
+            *ngIf="
+              dataControls.gender.touched &&
+              dataControls.gender.hasError('required')
+            "
+            >Pease Select Gender</span
+          >
+        </div>
+        <div class="form-group">
+          <div class="form-check">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="terms"
+              formControlName="terms"
+            />
+            <label class="form-check-label" for="terms">Accept terms</label>
+          </div>
+        </div>
+        <div formGroupName="address">
+          <div class="form-group">
+            <label for="street">Street No</label>
+            <input
+              type="text"
+              class="form-control"
+              id="street"
+              placeholder="Street No"
+              formControlName="street"
+            />
+          </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <input
+              type="text"
+              class="form-control"
+              id="city"
+              placeholder="City"
+              formControlName="city"
+            />
+          </div>
+          <div class="form-group">
+            <label for="state">State</label>
+            <input
+              type="text"
+              class="form-control"
+              id="state"
+              placeholder="State"
+              formControlName="state"
+            />
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="!checkoutForm.valid"
+        >
+          Submit
+        </button>
+
+        <button
+          type="submit"
+          class="btn btn-success m-5"
+          (click)="resetForms()"
+        >
+          Reset
+        </button>
+      </form>
+    </div>
+    <div class="col-md-6">
+      <div class="float-right">
+        <button type="button" class="btn btn-primary float-right">
+          No. of Persons <span class="badge badge-light">{{ personCout }}</span>
+        </button>
+      </div>
+      <table class="table table-striped-primary">
+        <thead>
+          <tr>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Street</th>
+            <th scope="col">City</th>
+            <th scope="col">State</th>
+            <th scope="col">edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let person of persons">
+            <td>{{ person.firstName }}</td>
+            <td>{{ person.lastName }}</td>
+            <td>{{ person.gender == "1" ? "Male" : "Female" }}</td>
+            <td>{{ person.street }}</td>
+            <td>{{ person.city }}</td>
+            <td>{{ person.state }}</td>
+            <td>
+              <button class="btn-success" (click)="updateData(person)">
+                Edit
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

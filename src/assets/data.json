@@ -1,0 +1,49 @@
+{
+    "Students" : [
+        {
+           "Id" : 1,
+           "Name":"abc",
+           "Class":3,
+           "Section": "D",
+           "Sub1":34,
+           "Sub2":56,
+           "Sub3":78
+        },
+         {
+           "Id" : 2,
+           "Name":"xyz",
+           "Class":4,
+           "Section": "C",
+           "Sub1":78,
+           "Sub2":89,
+           "Sub3":45
+        },
+         {
+           "Id" : 3,
+           "Name":"wer",
+           "Class":3,
+           "Section": "A",
+           "Sub1":90,
+           "Sub2":78,
+           "Sub3":56
+        },
+         {
+           "Id" : 4,
+           "Name":"asd",
+           "Class":3,
+           "Section": "B",
+           "Sub1":93,
+           "Sub2":72,
+           "Sub3":62
+        },
+         {
+           "Id" : 5,
+           "Name":"bnm",
+           "Class":3,
+           "Section": "B",
+           "Sub1":85,
+           "Sub2":79,
+           "Sub3":95
+        }
+    ]
+}

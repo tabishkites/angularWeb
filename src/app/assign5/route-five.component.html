@@ -1,0 +1,24 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th class="pointer" (click)="sortHeader('Id')">Id</th>
+      <th class="pointer" (click)="sortHeader('Name')">Name</th>
+      <th class="pointer" (click)="sortHeader('Class')">Class</th>
+      <th class="pointer" (click)="sortHeader('Section')">Section</th>
+      <th class="pointer" (click)="sortHeader('Sub1')">Sub1</th>
+      <th class="pointer" (click)="sortHeader('Sub2')">Sub2</th>
+      <th class="pointer" (click)="sortHeader('Sub3')">Sub3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of students">
+      <td>{{ student.Id }}</td>
+      <td>{{ student.Name }}</td>
+      <td>{{ student.Class }}</td>
+      <td>{{ student.Section }}</td>
+      <td>{{ student.Sub1 }}</td>
+      <td>{{ student.Sub2 }}</td>
+      <td>{{ student.Sub3 }}</td>
+    </tr>
+  </tbody>
+</table>

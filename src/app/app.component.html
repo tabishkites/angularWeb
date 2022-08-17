@@ -1,0 +1,52 @@
+<div>
+  <nav
+    class="navbar navbar-expand-sm bg-secondary justify-content-center"
+    *ngIf="showHead"
+  >
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#" style="color: wheat">Assignments</a>
+      </div>
+      <ul class="navbar-nav" style="margin-right: 35%">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            style="color: wheat"
+            routerLink="/route1"
+            >FloatingBanner</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/route2" style="color: wheat"
+            >Grid/List</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/route3" style="color: wheat"
+            >Input/Output</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/route4" style="color: wheat"
+            >Subject</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/route5" style="color: wheat"
+            >SortGrid</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/route6" style="color: wheat"
+            >AddDiv</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login" style="color: wheat">Login</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
+</div>
